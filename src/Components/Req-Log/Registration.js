@@ -19,7 +19,7 @@ export default class Register extends Component {
   
   submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/registration", this.state.data).then(res=>{
+    axios.post(process.env.REACT_APP_SECRET_CODE + "/api/registration", this.state.data).then(res=>{
       if(res.data.errors){
        return this.setState({errors:res.data.errors});
       }

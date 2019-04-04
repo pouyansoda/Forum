@@ -15,7 +15,7 @@ export default class MainUpdate extends Component {
             post : "",
             usernameId:this.props.post.user._id
         }     
-        axios.get('http://localhost:5000/api/session' ) 
+        axios.get(process.env.REACT_APP_SECRET_CODE + "/api/session" ) 
         .then(res => {
           if(res.statusCode === 401) return window.location = "/login";
           this.setState({user: res.data.session})
@@ -25,14 +25,14 @@ export default class MainUpdate extends Component {
    deleteHandler = () => {
        var deletePost =  this.props.post._id;
     axios
-      .delete(`http://localhost:5000/api/deletePostById/${deletePost}`)
+      .delete(process.env.REACT_APP_SECRET_CODE + `/api/deletePostById/${deletePost}`)
       .then(res => {
         this.props.pageRefresh();
       });
     }
     voteHandler = () => {
        var vote =   this.props.post._id;
-        axios.post(`http://localhost:5000/api/postUpVote/${vote}` )
+        axios.post(process.env.REACT_APP_SECRET_CODE + `/api/postUpVote/${vote}` )
         .then(res => {
             this.props.pageRefresh();
           });
@@ -50,7 +50,7 @@ export default class MainUpdate extends Component {
         e.preventDefault();
         var updatePost = this.props.post._id;
         axios
-          .put(`http://localhost:5000/api/updatePost/${updatePost}`,
+          .put(process.env.REACT_APP_SECRET_CODE + `/api/updatePost/${updatePost}`,
             {
               post: this.state.values
             }

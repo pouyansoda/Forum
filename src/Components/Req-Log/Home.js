@@ -9,7 +9,7 @@ export default class Home extends Component {
       main:"",
       isLoggedIn:true,
     }
-    axios.get('http://localhost:5000/api/session')
+    axios.get(process.env.REACT_APP_SECRET_CODE + '/api/session')
     .then((res)=>{this.setState({isLoggedIn:res.data.session})})
   }
   render() {

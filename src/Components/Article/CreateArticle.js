@@ -17,7 +17,7 @@ class AddArticle extends Component {
             errors:null
         }
 
-        axios.get('http://localhost:5000/api/session')
+        axios.get(process.env.REACT_APP_SECRET_CODE + '/api/session')
         .then((res)=>{this.setState({isLoggedIn:res.data.session})})
     }
     
@@ -28,7 +28,7 @@ class AddArticle extends Component {
     }
     submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/newPost',this.state.formData)
+        axios.post(process.env.REACT_APP_SECRET_CODE + '/api/newPost',this.state.formData)
         .then(res=>{
             // console.log(this.state.formData)
             if (res.data.msg) {

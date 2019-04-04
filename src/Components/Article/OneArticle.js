@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import './article-style.css'
 axios.defaults.withCredentials = true;
 
@@ -14,12 +13,12 @@ export default class OneArticle extends Component {
         }
     }
     componentDidMount = () => {
-      axios.get('http://localhost:5000/api/session' ) 
+      axios.get(process.env.REACT_APP_SECRET_CODE + '/api/session' ) 
       .then(res => {
         if(res.statusCode === 401) return window.location = "/login";
         this.setState({sessionUser: res.data.session})
       })
-      axios.get(`http://localhost:5000/api/getAllArticles`)
+      axios.get(process.env.REACT_APP_SECRET_CODE + '/api/getAllArticles')
       .then(res => {
             this.setState({
               post: res.data
@@ -29,7 +28,7 @@ export default class OneArticle extends Component {
           console.log(error);
       })
         var userposts =this.props.match.params.id;
-        axios.get(`http://localhost:5000/api/getAllArticles/${userposts}`)
+        axios.get(process.env.REACT_APP_SECRET_CODE + `/api/getAllArticles/${userposts}`)
         .then(req=>{
          if(req.statusCode === 401){ return window.location = "/login";}
            this.setState({userspost: req.data }) 

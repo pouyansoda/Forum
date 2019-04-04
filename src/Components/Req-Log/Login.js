@@ -21,7 +21,7 @@ class Login extends Component {
 
   submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/login", this.state.data).then(res => {
+    axios.post(process.env.REACT_APP_SECRET_CODE + "/api/login", this.state.data).then(res => {
       if (res.data.errors) {
         window.location.href = "/register";
         return this.setState({ errors: res.data }); 

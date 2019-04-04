@@ -14,12 +14,12 @@ export default class AllUsers extends Component {
         }
     }
     componentDidMount = () => {
-        axios.get('http://localhost:5000/api/session' ) 
+        axios.get(process.env.REACT_APP_SECRET_CODE + '/api/session' ) 
         .then(res => {
           if(res.statusCode === 401) return window.location = "/login";
           this.setState({sessionUser: res.data.session})
         })
-        axios.get("http://localhost:5000/api/getAllUsers")
+        axios.get(process.env.REACT_APP_SECRET_CODE + "/api/getAllUsers")
        .then(req=>{
         if(req.statusCode === 401){ return window.location = "/login";}
           this.setState({users: req.data }) 

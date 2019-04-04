@@ -4,7 +4,7 @@ import "./Head.css"
 export default class Header extends Component {
     logoutHandler = () => {
         axios
-          .get("http://localhost:5000/api/logOut")
+          .get(process.env.REACT_APP_SECRET_CODE + "/api/logOut")
           .then(res => {
             if(res) {
              window.location.href = '/login';

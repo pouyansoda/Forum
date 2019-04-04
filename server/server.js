@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 const bodyParser = require('body-parser');
-const Port = process.env.PORT || 5000;
+const Port = (process.env.PORT || 5000);
 const cors = require('cors');
 const router = require('express').Router();
 
@@ -20,7 +20,7 @@ app.use(session({
 
 app.use(
 	cors({
-		origin: ['http://localhost:3000'],
+		origin: ['http://localhost:3000', 'https://foroum-ps.herokuapp.com'],
 		methods: ['GET', 'HEAD', 'POST', 'DELETE', 'PUT', 'PATCH', 'OPTIONS'],
 		credentials: true //allow setting of cookies
 	})

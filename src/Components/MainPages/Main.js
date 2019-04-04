@@ -21,12 +21,12 @@ export default class Main extends Component {
     }
 };
 componentDidMount = () => {
-  axios.get('http://localhost:5000/api/session' ) 
+  axios.get(process.env.REACT_APP_SECRET_CODE + "/api/session" ) 
   .then(res => {
     if(res.statusCode === 401) return window.location = "/login";
     this.setState({sessionUser: res.data.session})
   })
-  axios.get("http://localhost:5000/api/user")
+  axios.get(process.env.REACT_APP_SECRET_CODE + "/api/user")
  .then(req=>{
   if(req.statusCode === 401){ return window.location = "/login";}
     this.setState({username: req.data.name }) 
@@ -37,7 +37,7 @@ componentDidMount = () => {
     this.getPostings();
 }
 getPostings = () => {
-  axios.get(`http://localhost:5000/api/getAllArticles`)
+  axios.get(process.env.REACT_APP_SECRET_CODE + "/api/getAllArticles")
   .then(res => {
       this.setState({
           vote : res.data.vote,
