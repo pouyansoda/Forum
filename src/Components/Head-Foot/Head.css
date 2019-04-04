@@ -1,0 +1,16 @@
+a {
+    font-family: 'futura-pt', Tahoma, Verdana, Geneva, Arial, sans-serif;
+}
+.chat{
+    float: right;
+}
+.logout{
+    color:red !important;
+}
+.logout:hover{
+    cursor: wait !important;
+    color:rgb(121, 24, 24) !important;
+}
+.log:hover {
+color:green !important;
+}

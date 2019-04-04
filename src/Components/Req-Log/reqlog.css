@@ -1,0 +1,41 @@
+body{
+    /* background-image: url('../../Img/img3.jpg'); */
+    /* font-family: 'futura-pt', Tahoma, Verdana, Geneva, Arial, sans-serif; */
+}
+.cen{
+    position:relative;
+    /* border:5px solid rgba(252, 249, 249, 0.2); */
+    background-color :#929fba;
+    width:400px;
+    height:450px;
+    font-family:sans-Serif;
+    padding:10px;
+    border-radius: 5px;
+    text-align:center;margin:auto;
+}
+h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:normal;
+    font-weight:700;
+    font-size:10px;
+    line-height:1.2;
+    text-transform:capitalize;
+    /* margin:20px!important; */
+    letter-spacing: 2.3px;
+    color:white;
+}
+.col , .btn{
+    font-family: 'futura-pt', Tahoma, Verdana, Geneva, Arial, sans-serif;
+}
+.name-inp {
+    text-transform: capitalize;
+}
+.btnss{
+    text-transform: initial;
+    color:white!important;
+    font-size:20px!important;
+    /* background-color: rgba(22, 110, 81, 0.719); */
+    /* border:2px solid rgba(22, 110, 81, 0.719); */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}

@@ -1,0 +1,50 @@
+.user-post{
+    padding:10px;
+    margin: 10px;
+    min-height: 100px;
+    width: 900px;
+    border: 2px solid rgba(218, 217, 217, 0.623);
+    border-radius: 5px;
+    width:1000px;
+    margin:10px 10px 192px 250px;
+    background-color: rgba(255, 249, 249, 0.062); 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.user-post::first-letter {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    /* font-weight: bold; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
+.new-post{
+    width: 500px;
+    text-align: center;
+    margin: auto auto auto auto;
+    padding:10px;
+    border: 2px solid rgba(218, 217, 217, 0.623);
+    border-radius: 5px;
+    /* margin:10px 10px 192px 250px; */
+    background-color: rgba(255, 249, 249, 0.062); 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.form-control{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: auto;
+}
+.post-area{
+    height:80px;
+    /* max-width:100px; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align:justify ;
+}
+.btns{
+    text-transform: initial;
+    color:rgb(23, 77, 59);
+    background-color: rgba(22, 110, 81, 0.719);
+    border:2px solid rgba(22, 110, 81, 0.719);
+}
+.btns:hover{
+    color:white;
+    border:2px solid white;
+}
