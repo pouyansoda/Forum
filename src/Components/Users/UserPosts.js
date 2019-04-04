@@ -31,7 +31,7 @@ export default class UserPost extends Component {
       })
         var userposts =this.props.match.params.id;
      
-      axios.get(process.env.REACT_APP_SECRET_CODE + "/api/getAllPostsOneUser/${userposts}")
+      axios.get(process.env.REACT_APP_SECRET_CODE + `/api/getAllPostsOneUser/${userposts}`)
      .then(req=>{
       if(req.statusCode === 401){ return window.location = "/login";}
         this.setState({userspost: req.data }) 
